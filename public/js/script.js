@@ -17,8 +17,7 @@ if (navigator.geolocation){
     );
 }
             
-const map = L.map("map").setView([0, 0], 16);
-
+const map = L.map("map").setView([0, 0], 15);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "Salman"
 }).addTo(map)
@@ -34,7 +33,6 @@ socket .on("receive-location", (data)=> {
         markers[id] = L.marker([latitude, longitude]).addTo(map);
     }
 });
-
 socket.on("user-disconnect", (id) => {
     if(markers[id]){
         map.removeLayer(markers[id]);

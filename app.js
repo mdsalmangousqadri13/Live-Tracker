@@ -1,30 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const path = require("path")
-
-// const http = require("http");
-
-// const socketio = require("socket.io");
-// const server = http.createServer(app);
-// const io = socketio(server);
-
-// app.set("view engine", "ejs");
-// app.use(express.static(path.join(__dirname, "public")))  
-
-// io.on("connection", function(socket) {
-//     console.log("connected");
-// });
-
-// app.get("/", function (req, res) {
-//     res.render("index");
-// });
-
-// app.listen(3000);
-
-
-
-                    // CHATGPT
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -40,7 +13,7 @@ const io = socketio(server);
 
 // Set view engine and static folder
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));  // ❗ use `app.use`, not `app.set`
+app.use(express.static(path.join(__dirname, "public"))); 
 
 // Socket.io connection handler
 io.on("connection", function(socket) {
